@@ -1,0 +1,13 @@
+name: macOS AppleScript
+
+on: [push]
+
+jobs:
+  decompile:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decompile AppleScript
+        run: |
+          osadecompile 1.scpt
