@@ -8,10 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fix file type
+      - name: Decompile with osacompile
         run: |
-          SetFile -t osas 1.scpt
-
-      - name: Decompile scpt
-        run: |
-          osadecompile 1.scpt
+          osacompile -d 1.scpt
