@@ -1,4 +1,4 @@
-name: macOS AppleScript
+name: AppleScript Decompile
 
 on: [push]
 
@@ -8,6 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Decompile AppleScript
+      - name: Fix file type
+        run: |
+          SetFile -t osas 1.scpt
+
+      - name: Decompile scpt
         run: |
           osadecompile 1.scpt
